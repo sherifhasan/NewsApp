@@ -9,24 +9,33 @@ class ArticleScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Home'),
+          title: Text(
+            article.title,
+            maxLines: 1,
+          ),
         ),
-        body: Card(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        body: ListView(
           children: <Widget>[
-            Text(
-              article.title,
-              style: TextStyle(
-                  color: Colors.blue,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                article.title,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.blue,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
+              ),
             ),
-            Text(
-              article.body,
-              style: TextStyle(fontSize: 15),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                article.body,
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 17),
+              ),
             ),
           ],
-        )));
+        ));
   }
 }

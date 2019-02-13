@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
         ),
         drawer: SideDrawer(),
         body: ListView.builder(
-          padding: EdgeInsets.all(8),
+          padding: EdgeInsets.all(16),
           itemCount: Articles.articlesList.length,
           itemBuilder: (context, index) {
             return buildListItem(context, Articles.articlesList[index]);
@@ -24,8 +24,14 @@ class HomeScreen extends StatelessWidget {
   Widget buildListItem(BuildContext context, News article) {
     return GestureDetector(
       child: Card(
-        child: Center(
-          child: Text(article.title),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Text(article.title,
+              style: TextStyle(
+                  color: Colors.blue[600],
+                  fontWeight: FontWeight.bold,
+                  fontSize: 17,
+                  decoration: TextDecoration.underline)),
         ),
       ),
       onTap: () => openArticleScreen(context, article),
