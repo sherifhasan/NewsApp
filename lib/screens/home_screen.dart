@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_task/models/news.dart';
-import 'package:news_task/side_drawer.dart';
-import 'package:news_task/static_articles.dart';
+import 'package:news_task/views/side_drawer.dart';
+import 'package:news_task/data/static_articles.dart';
 import 'article_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  void openArticleScreen(context, article) {
+   openArticleScreen(context, article) {
     Navigator.push(
         context,
         MaterialPageRoute(
